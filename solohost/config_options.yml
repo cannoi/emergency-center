@@ -1,0 +1,7 @@
+title: "Emergency Center"
+eyebrow: SoloHost App
+description: "Tạo cho tôi ứng dụng:  Emergency Center     trung tâm thông tin khẩn cấp lưu liên hệ, địa chỉ, thông tin quan trọng và hướng dẫn xử lý tình huống."
+footer_hint: Ready to run on Pi Desktop SoloHost.
+output_file: .env
+after_save: Saved. Start the app from SoloHost.
+fields: []

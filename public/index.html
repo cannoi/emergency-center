@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trung Tâm Khẩn Cấp & Cứu Hộ</title>
+  <style>
+    :root {
+      --primary: #e63946;
+      --primary-dark: #c52233;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #212529;
+      --text-muted: #6c757d;
+      --border: #dee2e6;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); padding: 16px; line-height: 1.5; }
+    .container { max-width: 900px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 24px; }
+    header h1 { color: var(--primary); font-size: 26px; margin-bottom: 6px; }
+    header p { color: var(--text-muted); font-size: 14px; }
+
+    .sos-banner { background: #fff5f5; border: 2px solid var(--primary); border-radius: var(--radius); padding: 16px; margin-bottom: 20px; text-align: center; }
+    .sos-banner h2 { color: var(--primary); font-size: 18px; margin-bottom: 12px; }
+    .sos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+    .btn-sos { background: var(--primary); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: background 0.2s, transform 0.1s; }
+    .btn-sos:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-sos span { font-size: 12px; font-weight: normal; opacity: 0.9; }
+
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+    .card h3 { margin-bottom: 14px; font-size: 18px; color: #343a40; display: flex; align-items: center; gap: 8px; }
+
+    .gps-box { background: #e9ecef; padding: 12px; border-radius: 8px; margin-bottom: 12px; font-size: 14px; word-break: break-all; }
+    .btn { background: #343a40; color: white; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 500; transition: background 0.2s; }
+    .btn:hover { background: #212529; }
+    .btn-danger { background: var(--primary); }
+    .btn-danger:hover { background: var(--primary-dark); }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+    .form-group { margin-bottom: 12px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 4px; color: var(--text-muted); }
+    input, select, textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; }
+    textarea { resize: vertical; min-height: 80px; }
+
+    .list-group { list-style: none; margin-top: 10px; }
+    .list-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; background: #fff; }
+    .list-item div b { display: block; font-size: 15px; }
+    .list-item div span { font-size: 13px; color: var(--text-muted); }
+    .actions-group { display: flex; gap: 6px; }
+    .btn-sm { padding: 6px 10px; font-size: 12px; border-radius: 6px; }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .btn-outline:hover { background: #f1f3f5; }
+
+    .guide-card { border-left: 4px solid #3b82f6; background: #eff6ff; padding: 12px 16px; border-radius: 8px; margin-bottom: 10px; }
+    .guide-card h4 { color: #1e40af; margin-bottom: 4px; }
+    .guide-card p { font-size: 14px; color: #1e3a8a; white-space: pre-line; }
+
+    .paf-made-by { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 30px; margin-bottom: 10px; }
+  </style>
+<style>.paf-made-by{position:fixed;right:8px;bottom:8px;width:min(72px,12vw);max-width:12vw;height:auto;object-fit:contain;opacity:.5;background:transparent;padding:0;border:0;box-shadow:none;filter:none;pointer-events:none;z-index:30}</style></head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🚨 Trung Tâm Khẩn Cấp & Cứu Hộ</h1>
+      <p>Hỗ trợ liên lạc nhanh, định vị khẩn cấp và sơ cứu y tế trực tuyến</p>
+    </header>
+
+    <!-- 1. Thanh quay số SOS một chạm -->
+    <div class="sos-banner">
+      <h2>QUAY SỐ KHẨN CẤP MỘT CHẠM</h2>
+      <div class="sos-grid" id="sos-quick-grid">
+        <a href="tel:115" class="btn-sos">🚑 Cấp Cứu 115<span>Y tế khẩn cấp</span></a>
+        <a href="tel:113" class="btn-sos">🚓 Cảnh Sát 113<span>An ninh trật tự</span></a>
+        <a href="tel:114" class="btn-sos">🚒 Cứu Hỏa 114<span>Phòng cháy chữa cháy</span></a>
+      </div>
+      <div id="custom-sos-grid" class="sos-grid" style="margin-top: 10px;"></div>
+    </div>
+
+    <!-- 2. Tiện ích xác định vị trí hiện tại -->
+    <div class="card">
+      <h3>📍 Vị Trí Hiện Tại (Đọc cho tổng đài)</h3>
+      <div class="gps-box" id="gps-status">Chưa xác định vị trí. Bấm nút bên dưới để lấy GPS hoặc địa chỉ.</div>
+      <button class="btn" onclick="getLocation()">🛰️ Lấy Tọa Độ & Địa Chỉ GPS</button>
+    </div>
+
+    <!-- 3. Hồ sơ y tế đầy đủ -->
+    <div class="card">
+      <h3>🏥 Hồ Sơ Y Tế Cá Nhân</h3>
+      <div id="medical-display" style="margin-bottom: 12px; font-size: 14px;">Chưa có thông tin y tế. Vui lòng cập nhật bên dưới.</div>
+      <form id="medical-form" onsubmit="saveMedical(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Họ và tên</label>
+            <input type="text" id="m-name" placeholder="Nguyễn Văn A">
+          </div>
+          <div class="form-group">
+            <label>Nhóm máu</label>
+            <select id="m-blood">
+              <option value="Không rõ">Không rõ</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-"></option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Tiền sử dị ứng</label>
+            <input type="text" id="m-allergies" placeholder="Ví dụ: Dị ứng penicillin, hải sản...">
+          </div>
+          <div class="form-group">
+            <label>Bệnh nền / Lưu ý đặc biệt</label>
+            <input type="text" id="m-conditions" placeholder="Ví dụ: Hen suyễn, huyết áp cao...">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Ghi chú khác cho nhân viên y tế</label>
+          <textarea id="m-notes" placeholder="Thông tin liên lạc người nhà khi cần..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger">Lưu Hồ Sơ Y Tế</button>
+      </form>
+    </div>
+
+    <!-- Danh bạ người thân ưu tiên -->
+    <div class="card">
+      <h3>📞 Danh Bạ Người Thân & Liên Hệ Ưu Tiên</h3>
+      <ul class="list-group" id="contact-list"></ul>
+      <div style="margin-top: 15px; border-top: 1px dashed var(--border); padding-top: 15px;">
+        <h4 style="font-size: 15px; margin-bottom: 8px;">Thêm liên hệ mới</h4>
+        <div class="form-grid">
+          <input type="text" id="c-name" placeholder="Tên (VD: Bố, Mẹ, Vợ/Chồng)">
+          <input type="text" id="c-phone" placeholder="Số điện thoại">
+        </div>
+        <button class="btn" style="margin-top: 8px;" onclick="addContact()">Thêm vào quay số SOS</button>
+      </div>
+    </div>
+
+    <!-- 4. Cẩm nang sơ cứu có tìm kiếm -->
+    <div class="card">
+      <h3>📖 Cẩm Nang Sơ Cứu Khẩn Cấp</h3>
+      <input type="text" id="search-guide" placeholder="🔍 Tìm kiếm hướng dẫn (ép tim, bỏng, hóc dị vật, cầm máu...)" oninput="filterGuides()" style="margin-bottom: 12px;">
+      <div id="guide-container"></div>
+    </div>
+
+    
+  </div>
+
+  <script>
+    const defaultGuides = [
+      { id: 1, title: 'Ép tim ngoài lồng ngực (CPR)', content: '1. Đặt nạn nhân nằm ngửa trên mặt phẳng cứng.
+2. Quỳ bên cạnh, đặt hai tay chồng lên nhau giữa ngực nạn nhân.
+3. Ấn sâu ít nhất 5cm với tốc độ 100-120 lần/phút.
+4. Duy trì liên tục cho đến khi nhân viên y tế đến.' },
+      { id: 2, title: 'Xử lý Bỏng nhiệt', content: '1. Ngay lập tức ngâm vùng bỏng vào nước mát sạch (không dùng nước đá lạnh) từ 15-20 phút.
+2. Cởi bỏ trang sức/quần áo chật trước khi sưng tấy.
+3. Che vết bỏng bằng gạc vô trùng hoặc vải sạch.
+4. KHÔNG bôi kem đánh răng, mỡ trăn hay nước mắm lên vết bỏng.' },
+      { id: 3, title: 'Hóc dị vật đường thở (Nghẹn)', content: '1. Đứng phía sau nạn nhân, vòng hai tay quanh eo.
+2. Nắm chặt một bàn tay, đặt lên vùng thượng vị (giữa rốn và mũi ức).
+3. Tay kia nắm lấy bàn tay đó và ấn mạnh hướng vào trong và lên trên thật dứt khoát.
+4. Lặp lại cho đến khi dị vật văng ra hoặc nạn nhân thở được.' },
+      { id: 4, title: 'Cầm máu vết thương hở', content: '1. Dùng gạc sạch hoặc vải sạch ép trực tiếp lên vết thương.
+2. Giữ lực ép liên tục từ 5-10 phút không nhấc ra xem thử.
+3. Băng cố định vết thương bằng băng gạc.
+4. Đưa nạn nhân đến cơ sở y tế gần nhất nếu vết thương sâu hoặc rộng.' }
+    ];
+
+    let appData = { contacts: [], medical: {}, customGuides: [] };
+
+    async function loadData() {
+      try {
+        const res = await fetch('/api/data');
+        const data = await res.json();
+        appData = data;
+
+        // Medical display
+        const med = data.medical || {};
+        const medDiv = document.getElementById('medical-display');
+        if (med.name) {
+          medDiv.innerHTML = `<b>Họ tên:</b> ${med.name} | <b>Nhóm máu:</b> ${med.blood || 'Không rõ'}<br>` +
+                             `<b>Dị ứng:</b> ${med.allergies || 'Không'} | <b>Bệnh nền:</b> ${med.conditions || 'Không'}<br>` +
+                             `<b>Ghi chú:</b> ${med.notes || 'Không'}`;
+          document.getElementById('m-name').value = med.name || '';
+          document.getElementById('m-blood').value = med.blood || 'Không rõ';
+          document.getElementById('m-allergies').value = med.allergies || '';
+          document.getElementById('m-conditions').value = med.conditions || '';
+          document.getElementById('m-notes').value = med.notes || '';
+        } else {
+          medDiv.innerHTML = '<i>Chưa có thông tin y tế. Vui lòng điền form bên dưới để nhân viên cứu hộ nắm bắt kịp thời.</i>';
+        }
+
+        // Contacts & Custom SOS buttons
+        const cList = document.getElementById('contact-list');
+        const customSosGrid = document.getElementById('custom-sos-grid');
+        cList.innerHTML = '';
+        customSosGrid.innerHTML = '';
+
+        if (data.contacts && data.contacts.length > 0) {
+          data.contacts.forEach(c => {
+            // Add to list
+            const li = document.createElement('li');
+            li.className = 'list-item';
+            li.innerHTML = `<div><b>${c.name}</b><span>${c.phone}</span></div>` +
+                           `<div class="actions-group">` +
+                           `<a href="tel:${c.phone}" class="btn btn-sm btn-danger">📞 Gọi</a>` +
+                           `<button class="btn btn-sm btn-outline" onclick="deleteContact(${c.id})">Xóa</button>` +
+                           `</div>`;
+            cList.appendChild(li);
+
+            // Add to quick SOS banner
+            const sosBtn = document.createElement('a');
+            sosBtn.href = `tel:${c.phone}`;
+            sosBtn.className = 'btn-sos';
+            sosBtn.style.background = '#2b2d42';
+            sosBtn.innerHTML = `👤 ${c.name}<span>${c.phone}</span>`;
+            customSosGrid.appendChild(sosBtn);
+          });
+        } else {
+          cList.innerHTML = '<li style="padding:10px; color:#6c757d;">Chưa có liên hệ ưu tiên nào.</li>';
+        }
+
+        renderGuides();
+      } catch (e) {
+        console.error('Error loading app data:', e);
+      }
+    }
+
+    async function saveMedical(e) {
+      e.preventDefault();
+      const medical = {
+        name: document.getElementById('m-name').value,
+        blood: document.getElementById('m-blood').value,
+        allergies: document.getElementById('m-allergies').value,
+        conditions: document.getElementById('m-conditions').value,
+        notes: document.getElementById('m-notes').value
+      };
+      const res = await fetch('/api/medical', { 
+        method: 'POST', 
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(medical) 
+      });
+      if (res.ok) {
+        alert('Đã cập nhật hồ sơ y tế thành công!');
+        loadData();
+      }
+    }
+
+    async function addContact() {
+      const name = document.getElementById('c-name').value.trim();
+      const phone = document.getElementById('c-phone').value.trim();
+      if (!name || !phone) return alert('Vui lòng nhập đầy đủ tên và số điện thoại người thân');
+      await fetch('/api/contacts', { 
+        method: 'POST', 
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify({name, phone}) 
+      });
+      document.getElementById('c-name').value = '';
+      document.getElementById('c-phone').value = '';
+      loadData();
+    }
+
+    async function deleteContact(id) {
+      if (!confirm('Bạn có chắc muốn xóa liên hệ này?')) return;
+      await fetch(`/api/contacts/${id}`, { method: 'DELETE' });
+      loadData();
+    }
+
+    function getLocation() {
+      const statusDiv = document.getElementById('gps-status');
+      if (!navigator.geolocation) {
+        statusDiv.innerHTML = 'Trình duyệt không hỗ trợ định vị GPS.';
+        return;
+      }
+      statusDiv.innerHTML = 'Đang xác định vị trí GPS chính xác...';
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        let addressText = `Tọa độ: ${lat.toFixed(6)}, ${lon.toFixed(6)}`;
+        try {
+          const resp = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&accept-language=vi`);
+          const geoData = await resp.json();
+          if (geoData && geoData.display_name) {
+            addressText = `📍 Địa chỉ: ${geoData.display_name}<br><small>(Tọa độ: ${lat.toFixed(6)}, ${lon.toFixed(6)})</small>`;
+          }
+        } catch (err) {
+          console.error(err);
+        }
+        statusDiv.innerHTML = addressText;
+      }, (error) => {
+        statusDiv.innerHTML = 'Không thể lấy vị trí GPS. Vui lòng kiểm tra quyền truy cập vị trí trên thiết bị.';
+      }, { enableHighAccuracy: true, timeout: 10000 });
+    }
+
+    function renderGuides(filter = '') {
+      const container = document.getElementById('guide-container');
+      const term = filter.toLowerCase();
+      const filtered = defaultGuides.filter(g => g.title.toLowerCase().includes(term) || g.content.toLowerCase().includes(term));
+      
+      if (filtered.length === 0) {
+        container.innerHTML = '<p style="color:#6c757d; font-size:14px;">Không tìm thấy hướng dẫn phù hợp.</p>';
+        return;
+      }
+
+      container.innerHTML = filtered.map(g => 
+        `<div class="guide-card">
+          <h4>${g.title}</h4>
+          <p>${g.content}</p>
+        </div>`
+      ).join('');
+    }
+
+    function filterGuides() {
+      const term = document.getElementById('search-guide').value;
+      renderGuides(term);
+    }
+
+    // Initial load
+    loadData();
+  </script>
+<img class="paf-made-by" src="/made-by.png" alt="Made with App Builder — Pi SoloHost"></body>
+</html>

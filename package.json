@@ -1,0 +1,13 @@
+{
+  "name": "emergency-center",
+  "version": "1.0.0",
+  "description": "Trung tâm thông tin khẩn cấp lưu liên hệ, địa chỉ, thông tin y tế và hướng dẫn xử lý tình huống.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
